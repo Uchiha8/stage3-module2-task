@@ -15,7 +15,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.mjc.school")
 public class AppConfig {
     @Bean

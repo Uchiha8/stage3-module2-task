@@ -2,6 +2,7 @@ package com.mjc.school.repository.utils;
 
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,10 +12,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+@Component
 public class DataSource {
     private static DataSource dataSource;
-
     private static List<NewsModel> newsModelList = new ArrayList<>();
     private static List<AuthorModel> authorModelList = new ArrayList<>();
 
@@ -24,13 +24,6 @@ public class DataSource {
 
     public DataSource() {
         init();
-    }
-
-    public static DataSource getInstance() {
-        if (dataSource == null) {
-            dataSource = new DataSource();
-        }
-        return dataSource;
     }
 
     private void init() {
