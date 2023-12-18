@@ -2,6 +2,7 @@ package com.mjc.school.service.validation;
 
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
+import org.springframework.stereotype.Component;
 
 public class Utils {
     public boolean validParamNews(NewsModel newsModel) {
