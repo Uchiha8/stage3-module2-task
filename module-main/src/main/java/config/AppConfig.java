@@ -9,9 +9,14 @@ import com.mjc.school.service.implementation.AuthorService;
 import com.mjc.school.service.implementation.NewsService;
 import com.mjc.school.service.mapper.NewsMapper;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.stereotype.Component;
 
 @Configuration
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = "com.mjc.school")
 public class AppConfig {
     @Bean
     public DataSource dataSource() {
