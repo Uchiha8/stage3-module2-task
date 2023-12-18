@@ -16,13 +16,12 @@ import java.util.Optional;
 @Service
 public class AuthorService implements BaseService<AuthorDTORequest, AuthorDTOResponse, Long> {
     private final AuthorRepositoryImpl authorRepository;
-
-    private final AuthorMapper authorMapper;
+    @Autowired
+    private AuthorMapper authorMapper;
 
     @Autowired
-    public AuthorService(AuthorRepositoryImpl authorRepository, AuthorMapper authorMapper) {
+    public AuthorService(AuthorRepositoryImpl authorRepository) {
         this.authorRepository = authorRepository;
-        this.authorMapper = authorMapper;
     }
 
     @Override
@@ -66,11 +65,11 @@ public class AuthorService implements BaseService<AuthorDTORequest, AuthorDTORes
     }
 
     @Override
-    public boolean deleteById(Long id) throws AuthorNotFoundException {
+    public boolean deleteById(Long id) {
         if (authorRepository.deleteById(id)) {
             return true;
         }
-        throw new AuthorNotFoundException("Author could not removed with ID: " + id);
+        return false;
     }
 
     public boolean validParamAuthor(AuthorModel authorModel) {

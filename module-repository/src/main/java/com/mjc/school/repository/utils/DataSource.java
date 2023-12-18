@@ -22,7 +22,7 @@ public class DataSource {
     private static final String NEWS_FILE_PATH = "module-repository/src/main/resources/news";
     private static final String CONTENT_FILE_PATH = "module-repository/src/main/resources/content";
 
-    private DataSource() {
+    public DataSource() {
         init();
     }
 

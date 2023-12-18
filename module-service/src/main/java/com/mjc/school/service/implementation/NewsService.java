@@ -17,12 +17,12 @@ import java.util.Optional;
 public class NewsService implements BaseService<NewsDTORequest, NewsDTOResponse, Long> {
 
     private final NewsRepositoryImpl newsRepository;
-    private final NewsMapper newsMapper;
+    @Autowired
+    private NewsMapper newsMapper;
 
     @Autowired
-    public NewsService(NewsRepositoryImpl newsRepository, NewsMapper newsMapper) {
+    public NewsService(NewsRepositoryImpl newsRepository) {
         this.newsRepository = newsRepository;
-        this.newsMapper = newsMapper;
     }
 
     @Override
